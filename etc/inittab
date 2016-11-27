@@ -1,0 +1,7 @@
+# /etc/inittab
+::sysinit:/etc/init.d/rcS
+console::respawn:-/bin/sh
+::once:/usr/sbin/telnetd -l /bin/login
+::ctrlaltdel:/sbin/reboot
+::shutdown:/bin/umount -a -r
+

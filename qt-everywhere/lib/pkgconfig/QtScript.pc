@@ -1,0 +1,16 @@
+prefix=/qt-everywhere
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include/QtScript
+qt_config=lex yacc uic resources qt release incremental link_prl no_mocdepend release stl qt_no_framework silent cross_compile release shared dll embedded largefile stl precompile_header def_files_disabled exceptions_off dylib create_prl link_prl depend_includepath QTDIR_build qt_install_headers qt depend_includepath qmake_cache target_qt hide_symbols create_libtool create_pc explicitlib building-libs standalone_package depend_includepath moc thread shared dll
+moc_location=/qt-everywhere/bin/moc
+uic_location=/qt-everywhere/bin/uic
+
+Name: Qtscript
+Description: Qtscript Library
+Version: 4.7.0
+Libs: -L${libdir} -lQtScript 
+Libs.private: -L/home/linux/opt/tslib-1.0/lib -L/qt-everywhere/lib  -lQtCore -L/home/linux/opt/tslib-1.0/lib -L/qt-everywhere/lib -lpthread   
+Cflags: -DQT_SHARED -I/qt-everywhere/include -I${includedir}
+Requires: QtCore
+

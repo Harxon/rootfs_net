@@ -1,0 +1,48 @@
+#!/bin/sh
+export HOSTNAME=farsight
+export USER=root
+export HOME=root
+export PS1="[$USER@$HOSTNAME \W]\# "
+PATH=/bin:/sbin:/usr/bin:/usr/sbin
+LD_LIBRARY_PATH=/lib:/usr/lib:$LD_LIBRARY_PATH
+
+export LD_LIBRARY_PATH=/mjpg:$LD_LIBRARY_PATH
+
+#//tslib
+export set TSLIB_TSDEVICE=/dev/event4
+export set TSLIB_FBDEVICE=/dev/fb0
+export set TSLIB_PLUGINDIR=/tslib/lib/ts
+export set TSLIB_CALIBFILE=/etc/pointercal
+export set TSLIB_CONFFILE=/tslib/etc/ts.conf
+
+#//qt-everywhere
+export set HOME=/root
+export set QPEDIR=/qt-everywhere
+export set QTDIR=/qt-everywhere
+export set LD_LIBRARY_PATH=/qt-everywhere/lib:/tslib/lib:$LD_LIBRARY_PATH
+
+#export set QWS_DISPLAY="linuxFB:/dev/fb0"
+export QWS_DISPLAY="LinuxFb:mmWidth100:mmHeight130:0"
+export TSLIB_TSEVENTTYPE=H3600
+export set QT_QWS_FONTDIR=/qt-everywhere/lib/fonts/
+export set PLUGIN_PATH=$QTDIR/plugins/
+export set PATH=$QPEDIR/bin:$PATH
+#export set QWS_KEYBOARD="TTY:/dev/tty1"
+
+
+
+export PATH  LD_LIBRARY_PATH
+export TSLIB_ROOT=/tslib
+export QWS_SIZE=1024*600
+export TSLIB_CONSOLEDEVICE=none
+export POINTERCAL_FILE=/etc/pointercal
+export QWS_MOUSE_PROTO=Tslib:/dev/event4
+
+export QWS_SW_CURSOR
+
+/start.sh
+
+#USER="'id-un'"
+#LOGNAME=$USER
+#PS1='[\U@\h \w]'
+PATH=$PATH
